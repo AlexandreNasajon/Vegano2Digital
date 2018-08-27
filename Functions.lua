@@ -50,7 +50,7 @@ function Functions.shuffle( pile )
 		pile[ j ], pile[ i ] = pile[ i ], pile[ j ]
 
 	end
-	return a
+	return pile
 end
 
 --VIEW_CARD
