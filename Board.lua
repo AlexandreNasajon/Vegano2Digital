@@ -2,7 +2,8 @@ local Board = {}
 
 board = {
     deck = {},
-    discard = {}
+    discard = {},
+    stack = {}
 }
 
 return Board
