@@ -171,9 +171,16 @@ function Functions.play_card( card , player , opponent )
         Functions.move( card , player.hand , player.field )
 
     elseif card.type == "Impact" then
-
+	Functions.move( card , player.hand , board.stack )
+		
+	if card.name == Hunter of card.name == Fisher then
+		print(opponent.name.." may play the Veganism card.")
+		Functions.print_zone( opponent.hand )
+		--TODO
+	end		
+		
         card.effect( card , player , opponent )
-        Functions.move( card , player.hand , board.discard )
+        Functions.move( card , board.stack , board.discard )
     end
 end
 
