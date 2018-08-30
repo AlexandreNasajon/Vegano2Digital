@@ -141,6 +141,7 @@ function Functions.draw_cards( player )
     print( player.name.." drew two cards." )
 end
 
+
 --DRAW_HAND
 function Functions.draw_hand( player )
 
@@ -171,16 +172,15 @@ function Functions.play_card( card , player , opponent )
         Functions.move( card , player.hand , player.field )
 
     elseif card.type == "Impact" then
-	Functions.move( card , player.hand , board.stack )
-		
-	if card.name == Hunter of card.name == Fisher then
-		print(opponent.name.." may play the Veganism card.")
-		Functions.print_zone( opponent.hand )
-		--TODO
-	end		
-		
-        card.effect( card , player , opponent )
-        Functions.move( card , board.stack , board.discard )
+	
+	if card.name == "Veganism" then
+		print("Veganism can't be played at this moment!")
+		return
+	else		
+		Functions.move( card , player.hand , board.stack )	
+        	card.effect( card , player , opponent )
+        	Functions.move( card , board.stack , board.discard )
+	end
     end
 end
 
