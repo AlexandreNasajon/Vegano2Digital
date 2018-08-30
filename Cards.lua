@@ -40,6 +40,7 @@ Cards.Octopus = {
     name = "Octopus",
     type = "Animal",
     environment = "Sea",
+
     points = 3,
     text = "One of the most intelligent invertebrates."
 }
@@ -59,11 +60,11 @@ Cards.Tuna = {
     points = 1,
     text = "A fast fish."
 }
-
 --IMPACTS
 Cards.Hunter = {
     name = "Hunter",
     type = "Impact",
+
     subtype = "Human",
     text = "Select one land animal in your opponent's field. Discard it.",
     effect = function( card , player , opponent )
@@ -91,11 +92,13 @@ Cards.Hunter = {
                         local answer = tonumber(io.read())
                         
                         if answer == 0 then
-                            return
+                            
                         elseif answer == 1 then
                             Functions.move( opponent.hand[ k ] , opponent.hand , board.discard )
                             Functions.move( card , board.pile , board.discard )
                             print("Veganism countered "..card.name.."!")
+                            h = true
+                        end
                     end
                 end
                 
@@ -104,7 +107,7 @@ Cards.Hunter = {
                     h = true
                 end
 
-            else
+            els
                 print("SELECT A VALID OPTION!")
             end
         end
