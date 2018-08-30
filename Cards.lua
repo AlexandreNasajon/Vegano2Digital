@@ -77,6 +77,10 @@ Cards.Hunter = {
 
             if input ~= nil and input <= #opponent.field and input > 0 then
                 
+                local target = opponent.field[ input ]
+                
+                --TODO veganism
+                
                 if opponent.field[ input ].environment == "Land" or opponent.field[ input ].environment == "Swamp" then
                     Functions.move( opponent.field[input ] , opponent.field , board.discard )
                     h = true
