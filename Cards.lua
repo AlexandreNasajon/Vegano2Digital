@@ -79,7 +79,25 @@ Cards.Hunter = {
                 
                 local target = opponent.field[ input ]
                 
-                --TODO veganism
+                print(target.name.." was targeted!")
+                print(opponent.name.." may play the Veganism card.")
+                
+                for k , v in pairs( opponent.hand ) do
+                    if opponent.hand[ k ].name == "Veganism" then
+                        print("Will you play the Veganism card?")
+                        print("0 - No")
+                        print("1 - Yes")
+                        
+                        local answer = tonumber(io.read())
+                        
+                        if answer == 0 then
+                            return
+                        elseif answer == 1 then
+                            Functions.move( opponent.hand[ k ] , opponent.hand , board.discard )
+                            Functions.move( card , board.pile , board.discard )
+                            print("Veganism countered "..card.name.."!")
+                    end
+                end
                 
                 if opponent.field[ input ].environment == "Land" or opponent.field[ input ].environment == "Swamp" then
                     Functions.move( opponent.field[input ] , opponent.field , board.discard )
