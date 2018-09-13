@@ -188,6 +188,14 @@ Cards.Submarine = {
             print( i.." - "..board.deck[#board.deck].name )
             i = i + 1
         end
+        
+        local h = false
+        
+        while h == false do
+            local input = tonumber(io.read())
+            
+            if 
+        end
         --TODO
         
     end
@@ -304,6 +312,16 @@ Cards.Flood = {
     subtype = "Natural",
     text = "Each player chooses two animals they control; Shuffle those animals into the deck.",
     effect = function( card , player , opponent )
+    
+         local h = false
+         local k = false
+            
+         while h == false do
+                
+                
+                
+         end
+           
     end
 }
 
