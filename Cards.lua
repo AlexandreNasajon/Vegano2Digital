@@ -183,6 +183,13 @@ Cards.Submarine = {
     subtype = "Human",
     text = "Look at the top six cards of the deck; You may put a sea animal from among them onto your field; Shuffle the rest into the deck.",
     effect = function( card , player , opponent )
+        local i = 0
+        while i < 6 do
+            print( i.." - "..board.deck[#board.deck].name )
+            i = i + 1
+        end
+        --TODO
+        
     end
 }
 
