@@ -12,19 +12,17 @@ function Functions.find( where , what )
 end
 
 --SORT
-function Functions.sort( table , new )
+function Functions.sort( tbl )
+    local new = {}
 
-    for k , v in pairs( table ) do
-        new[ k ] = table[ k ]
-    end
-
-    for i = 1 , #new do
-        for j = 1 , #new do
-            if new[ i ] < new[ j ] then
-                new[ i ] , new[ j ] = new[ j ] , new[ i ]
+    for i = 1 , #tbl do
+        for j = 1 , #tbl do
+            if tbl[ i ] < tbl[ j ] then
+                tbl[ i ] , tbl[ j ] = tbl[ j ] , tbl[ i ]
             end
         end
     end
+    return new
 end
 
 --MOVE
